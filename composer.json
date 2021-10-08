@@ -8,7 +8,7 @@
       "ach"
     ],
     "homepage": "https://stronghold.co",
-    "license": "proprietary",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "Stronghold Technologies LLC"

@@ -1,0 +1,28 @@
+{
+    "name": "strongholdpay/magento2-plugin",
+    "type": "magento2-module",
+    "description": "ACH Payment Gateway using Stronghold Pay Checkout",
+    "version": "0.1.0",
+    "keywords": [
+      "stronghold",
+      "ach"
+    ],
+    "homepage": "https://stronghold.co",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Stronghold Technologies LLC"
+        }
+    ],
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "StrongholdPay\\": "lib/",
+            "StrongholdPay\\Checkout\\": ""
+        }
+    },
+  "require": {
+    "ext-curl": "*",
+    "ext-json": "*"
+  }
+}

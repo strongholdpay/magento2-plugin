@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="StrongholdPay\Checkout\Model\ConfigProvider" type="Magento\Payment\Model\CcGenericConfigProvider">
+        <arguments>
+            <argument name="methodCodes" xsi:type="array">
+                <item name="strongholdpay_checkout" xsi:type="const">StrongholdPay\Checkout\Model\Payment::CODE</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Checkout\Model\CompositeConfigProvider">
+        <arguments>
+            <argument name="configProviders" xsi:type="array">
+                <item name="strongholdpay_checkout_config_provider" xsi:type="object">StrongholdPay\Checkout\Model\ConfigProvider</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Checkout\Block\Checkout\AttributeMerger">
+        <plugin name="strongholdpay_checkout_block_phone_validation" type="StrongholdPay\Checkout\Block\Checkout\PhoneValidation"/>
+    </type>
+</config>
